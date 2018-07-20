@@ -1,4 +1,5 @@
-FROM debian:stretch-slim
+ARG BASE_IMAGE=debian:stretch-slim
+FROM ${BASE_IMAGE}
 MAINTAINER David Bainbridge <dbainbri@ciena.com>
 
 USER root
