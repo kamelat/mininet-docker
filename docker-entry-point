@@ -33,7 +33,7 @@ launch() {
     # arguments
     elif [[ $1 =~ ^- ]]; then
       exec mn $@
-
+   
     # Unknown argument
     else
       usage
@@ -43,9 +43,6 @@ launch() {
 
 # Start the Open Virtual Switch Service
 service openvswitch-switch start
+ovs-vsctl set-manager ptcp:6640
 
-if [ $# -eq 0 ]; then
-  launch "$MININET_SCRIPT" $MININET_SCRIPT_OPTIONS
-else
-  launch $@
-fi
+launch $@
