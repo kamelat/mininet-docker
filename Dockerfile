@@ -8,6 +8,7 @@ WORKDIR /root
 COPY  docker-entry-point /docker-entry-point
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    openvswitch-switch \
     curl \
     iproute2 \
     iputils-ping \
