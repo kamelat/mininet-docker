@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+FROM debian:stretch-slim
+MAINTAINER David Bainbridge <dbainbri@ciena.com>
 
 USER root
 WORKDIR /root
