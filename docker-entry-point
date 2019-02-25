@@ -12,7 +12,10 @@ usage() {
 launch() {
   # If no options are given or if only a single option is given and it is "-h"
   # display help infformation
-  if [ $# -eq 0 -o $1 == "-h" ]; then
+  #if [ $# -eq 0 -o $1 == "-h" ]; then
+  #  usage
+  #else
+  if [ $1 == "-h" ]; then
     usage
   else
 
