@@ -22,17 +22,17 @@ launch() {
       curl -s -o ./script $1
       chmod 755 ./script
       shift
-      exec ./script $@
+      exec ./script "$@"
 
     # If first argument is an absolute file path then execute that file passing
     # it the rest of the arguments
     elif [[ $1 =~ ^/ ]]; then
-      exec $@
+      exec "$@"
 
     # If first argument looks like an argument then execute mininet with all the
     # arguments
     elif [[ $1 =~ ^- ]]; then
-      exec mn $@
+      exec mn "$@"
    
     # Unknown argument
     else
@@ -45,4 +45,4 @@ launch() {
 service openvswitch-switch start
 ovs-vsctl set-manager ptcp:6640
 
-launch $@
+launch "$@"
